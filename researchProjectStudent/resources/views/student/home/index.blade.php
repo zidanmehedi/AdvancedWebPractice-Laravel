@@ -9,8 +9,8 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="/styles/shards-dashboards.1.1.0.min.css">
+    <link rel="stylesheet" href="/styles/extras.1.1.0.min.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body class="h-100">
@@ -37,7 +37,7 @@
         </li>
       </ul>
       <div class="actions mb-4">
-        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="/studentCngPass">
+        <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="#">
           <i class="material-icons">lock</i> Change Password</a>
         <!--  <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
           <i class="material-icons">book</i> Documentation</a -->
@@ -86,52 +86,41 @@
                   
                 </div>
               </div>
-              <input class="navbar-search form-control" type="text" aria-label="Search"> </div>
+              <input class="navbar-search form-control" type="text" aria-label="Search">
+          	</div>
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/studentHome">
+                <a class="nav-link active" href="{{route('studentHome')}}">
                   <i class="material-icons">home</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentResearch">
+                <a class="nav-link " href="{{route('studentResearch')}}">
                   <i class="material-icons">vertical_split</i>
                   <span>My Research</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentTopics">
+                <a class="nav-link " href="{{route('studentTopicsWindow')}}">
                   <i class="material-icons">book</i>
                   <span>Available Topics</span>
                 </a>
               </li>
-              <!--   <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Supervisors</span>
-                </a>
-              </l -->
               <li class="nav-item">
-                <a class="nav-link " href="/studentUpload">
+                <a class="nav-link " href="/">
                   <i class="material-icons">note</i>
                   <span>Upload Documents</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentDownload">
+                <a class="nav-link " href="/">
                   <i class="material-icons">cloud_download</i>
                   <span>Download Materials</span>
                 </a>
               </li>
-              <!--   <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </l -->
             </ul>
           </div>
         </aside>
@@ -147,7 +136,9 @@
                       
                     </div>
                   </div>
-                  <input class="navbar-search form-control" type="text"  aria-label="Search"> </div>
+                  <div class="navbar-search" style="background-color: white"> </div>
+
+                  </div>
               </form>
               <ul class="navbar-nav border-left flex-row ">
                 <!--   <li class="nav-item border-right dropdown notifications">
@@ -188,13 +179,13 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="user-avatar rounded-circle mr-2" src="/images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block"><%= user.student_id%></span>
+                    <span class="d-none d-md-inline-block">xx-xxxxx-x</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="/studentHome">
+                    <a class="dropdown-item" href="{{route('studentHome')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="/logout">
+                    <a class="dropdown-item text-danger" href="/">
                       <i class="material-icons text-danger">&#xE879;</i> Logout </a>
                   </div>
                 </li>
@@ -208,7 +199,7 @@
           </div>
           <!-- / .main-navbar -->
 
-          <%if(!error.student_fname && !error.student_lname && !error.student_dept && !error.student_cgpa && !error.student_credit){%>
+          <!--  <%if(!error.student_fname && !error.student_lname && !error.student_dept && !error.student_cgpa && !error.student_credit){% -->
           <div class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
@@ -216,63 +207,63 @@
             <i class="fa fa-check mx-2"></i>
             <strong>Success!</strong> Your profile has been updated!
           </div>
-          <%}else if(error.student_fname){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+          <!--  <%}else if(error.student_fname){% -->
+          <!--  <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_fname.msg%>!
-          </div>
-           <%}else if(error.student_lname){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+            <strong>Alert!</strong> <%=error.student_fname.msg%!
+          </div -->
+           <!--  <%}else if(error.student_lname){% -->
+          <!--  <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_lname.msg%>!
-          </div>
-           <%}else if(error.student_dept){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+            <strong>Alert!</strong> <%=error.student_lname.msg%!
+          </div -->
+           <!--  <%}else if(error.student_dept){% -->
+         <!--   <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">×</span>
+           </button>
+           <i class="fa fa-check mx-2"></i>
+           <strong>Alert!</strong> <%=error.student_dept.msg%!
+         </div -->
+          <!--  <%}else if(error.student_cgpa){% -->
+          <!--  <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_dept.msg%>!
-          </div>
-          <%}else if(error.student_cgpa){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+            <strong>Alert!</strong> <%=error.student_cgpa.msg%!
+          </div -->
+          <!--  <%}else if(error.student_credit){% -->
+         <!--   <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">×</span>
+           </button>
+           <i class="fa fa-check mx-2"></i>
+           <strong>Alert!</strong> <%=error.student_credit.msg%!
+         </div -->
+          <!--  <%}else if(error.student_contact){% -->
+          <!--  <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_cgpa.msg%>!
-          </div>
-          <%}else if(error.student_credit){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
+            <strong>Alert!</strong> <%=error.student_contact.msg%!
+          </div -->
+          <!--  <%}else{% -->
+          <!--  <div class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_credit.msg%>!
-          </div>
-          <%}else if(error.student_contact){%>
-          <div style="background-color: red" class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <i class="fa fa-check mx-2"></i>
-            <strong>Alert!</strong> <%=error.student_contact.msg%>!
-          </div>
-          <%}else{%>
-          <div class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <i class="fa fa-check mx-2"></i>
-            <strong><%=title%></strong>
-          </div>
-          <%}%>
+            <strong>><%=title%Title</strong>
+          </div -->
+          <!--  <%}% -->
           <div class="main-content-container container-fluid px-4">
             <!-- Page Header -->
             <div class="page-header row no-gutters py-4">
@@ -290,8 +281,8 @@
                     <div class="mb-3 mx-auto">
                       <img class="rounded-circle" src="/images/avatars/0.jpg" alt="User Avatar" width="110">
                     </div>
-                    <h4 class="mb-0"><%= user.student_fname%>&ensp;<%= user.student_lname%></h4>
-                    <h6 class="mb-0"><%=user.student_email%></h6>
+                    <h4 class="mb-0"><!-- ><%= user.student_fname% -->Demo&ensp;Demo<!-- ;<%= user.student_lname% --></h4>
+                    <h6 class="mb-0">demo@demo.com<!-- ><%=user.student_email% --></h6>
                     <div style="width: 100%" class="rw">
                       <table border="0px" width="100%">
                         <tr>
@@ -300,64 +291,48 @@
                         <tr>
                           <td>Student ID</td>
                           <td>:</td>
-                          <td><%= user.student_id%></td>
+                          <td><!-- ><%= user.student_id% -->Demo</td>
                         </tr>
                         <tr>
                           <td>Department</td>
                           <td>:</td>
-                          <td><%= user.student_dept%></td>
+                          <td>Demo<!-- ><%= user.student_dept% --></td>
                         </tr>
                         <tr>
                           <td>CGPA</td>
                           <td>:</td>
-                          <td><%= user.student_cgpa%></td>
+                          <td>Demo<!-- ><%= user.student_cgpa% --></td>
                         </tr>
                         <tr>
                           <td>Credit</td>
                           <td>:</td>
-                          <td><%= user.student_credit%></td>
+                          <td>Demo<!-- ><%= user.student_credit% --></td>
                         </tr>
                         
                         <tr>
                           <td>Contact</td>
                           <td>:</td>
-                          <td><%= user.student_contact%></td>
+                          <td>Demo<!-- ><%= user.student_contact% --></td>
                         </tr>
-                        <%if(check==true){%>
+                        <!--  <%if(check==true){ -->
                         <tr>
                           <td>Registration Date</td>
                           <td>:</td>
-                          <td><%=user.student_regDate%></td>
+                          <td>Demo<!-- ><%=user.student_regDate% --></td>
                         </tr>
-                        <%}else{%>
-                        <tr>
-                          <td>Registration Date</td>
-                          <td>:</td>
-                          <td><%= moment(user.student_regDate).format('Do MMMM, YYYY')%></td>
-                        </tr>
-                        <%}%>
+                        <!--  <%}else{% -->
+                       <!--   <tr>
+                         <td>Registration Date</td>
+                         <td>:</td>
+                         <td>Demo><%= moment(user.student_regDate).format('Do MMMM, YYYY')%</td>
+                       </tr -->
+                        <!--  <%}% -->
                          <tr>
                           <td colspan="3" height="67px"></td>
                         </tr>
                       </table>
                     </div>
                   </div>
-                 <!--ul class="list-group list-group-flush">
-                   <li class="list-group-item px-4">
-                     <div class="progress-wrapper">
-                      <strong class="text-muted d-block mb-2">Workload</stron>
-                       <div class="progress progress-sm">
-                         <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
-                           <span class="progress-value">74%</span>
-                         </div>
-                       </div>
-                     </div>
-                   </li>
-                   <li class="list-group-item p-4">
-                     <strong class="text-muted d-block mb-2">Description</strong>
-                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</span>
-                   </li>
-                 </u-->
                 </div>
               </div>
               <div class="col-lg-8">
@@ -380,72 +355,48 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">First Name</label>
-                                <input type="text" class="form-control" id="feFirstName" name="student_fname" placeholder="First Name" value="<%= user.student_fname%>"> </div>
+                                <input type="text" class="form-control" id="feFirstName" name="student_fname" placeholder="First Name" value="Demo"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Last Name</label>
-                                <input type="text" class="form-control" id="feLastName" name="student_lname" placeholder="Last Name" value="<%= user.student_lname%>"> </div>
+                                <input type="text" class="form-control" id="feLastName" name="student_lname" placeholder="Last Name" value="Demo"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">ID</label>
-                                <input type="text" class="form-control" id="feId" name="student_id" placeholder="xx-xxxxx-x" value="<%= user.student_id%>" readonly> </div>
+                                <input type="text" class="form-control" id="feId" name="student_id" placeholder="xx-xxxxx-x" value="Demo" readonly> </div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Department</label>
-                                <input type="text" class="form-control" id="feDept" name="student_dept" placeholder="CSE" value="<%= user.student_dept%>"> </div>
+                                <input type="text" class="form-control" id="feDept" name="student_dept" placeholder="CSE" value="Demo"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">CGPA</label>
-                                <input type="text" class="form-control" id="feCGPA" name="student_cgpa" placeholder="CGPA" value="<%= user.student_cgpa%>" ></div>
+                                <input type="text" class="form-control" id="feCGPA" name="student_cgpa" placeholder="CGPA" value="Demo" ></div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Credit</label>
-                                <input type="text" class="form-control" id="feCredit" name="student_credit" placeholder="Credit" value="<%= user.student_credit%>"> </div>
+                                <input type="text" class="form-control" id="feCredit" name="student_credit" placeholder="Credit" value="Demo"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Email</label>
-                                <input type="email" class="form-control" id="feEmailAddress" name="student_email" placeholder="Email" value="<%= user.student_email%>" readonly> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" name="student_email" placeholder="Email" value="Demo" readonly> </div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Contact Number</label>
-                                <input type="text" class="form-control" id="feCon" name="student_contact" value="<%= user.student_contact%>"> </div>
+                                <input type="text" class="form-control" id="feCon" name="student_contact" value="Demo"> </div>
                             </div>
-                            <%if(check==true){%>
+                            <!--  <%if(check==true){% -->
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label >Registration Date</label>
-                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="<%=user.student_regDate%>" readonly> </div>
+                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="Demo" readonly> </div>
                             </div>
-                            <%}else{%>
-                             <div class="form-row">
+                            <!--  <%}else{% -->
+                             <!--  <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label >Registration Date</label>
-                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="<%= moment(user.student_regDate).format('Do MMMM, YYYY')%>" readonly> </div>
-                            </div>
-                            <%}%>
-                            <!--   <div class="form-group">
-                              <label for="feInputAddress">Address</label>
-                              <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St"> </div>
-                                                          <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="feInputCity">City</label>
-                                <input type="text" class="form-control" id="feInputCity"> </div>
-                              <div class="form-group col-md-4">
-                                <label for="feInputState">State</label>
-                                <select id="feInputState" class="form-control">
-                                  <option selected>Choose...</option>
-                                  <option>...</option>
-                                </select>
-                              </div>
-                              <div class="form-group col-md-2">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip"> </div>
-                                                          </div>
-                                                          <div class="form-row">
-                              <div class="form-group col-md-12">
-                                <label for="feDescription">Description</label>
-                                <textarea class="form-control" name="feDescription" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?</textarea>
-                              </di
-                            </di -->
+                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="Demo" readonly> </div>
+                                                         </div -->
+                            <!--  <%}% -->
                             <button type="submit" class="btn btn-accent">Update Account</button>
                           </form>
                         </div>
@@ -457,47 +408,12 @@
             </div>
             <!-- End Default Light Table -->
           </div>
-          <!--   <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-            <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
-              <a href="https://designrevision.com" rel="nofollow">DesignRevision</a>
-            </span>
-          </foote -->
         </main>
       </div>
     </div>
     <div class="promo-popup animated">
       <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
         <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
-      <!--   <div class="pp-intro-bar"> Need More Templates?
-        <span class="close">
-          <i class="material-icons">close</i>
-        </span>
-        <span class="up">
-          <i class="material-icons">keyboard_arrow_up</i>
-        </span>
-      </di -->
-     <!--    <div class="pp-inner-content">
-       <h2>Shards Dashboard Pro</h2>
-       <p>A premium & modern Bootstrap 4 admin dashboard template pack.</p>
-       <a class="pp-cta extra-action" href="http://bit.ly/shards-dashboard-pro">Download</a>
-     </di -->
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -505,7 +421,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+    <script src="/scripts/extras.1.1.0.min.js"></script>
+    <script src="/scripts/shards-dashboards.1.1.0.min.js"></script>
   </body>
 </html>

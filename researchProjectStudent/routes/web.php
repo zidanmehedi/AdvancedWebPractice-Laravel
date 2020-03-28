@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('/login', 'login@index')->name('login');
 
 Route::get('/student/registration', 'studentReg@index')->name('studentReg');
+
+Route::get('/student/home', 'studentHome@index')->name('studentHome');
+
+Route::get('/student/research', 'studentResearch@index')->name('studentResearch');
+
+Route::get('/student/availableTopics', 'studentTopicsWindow@index')->name('studentTopicsWindow');

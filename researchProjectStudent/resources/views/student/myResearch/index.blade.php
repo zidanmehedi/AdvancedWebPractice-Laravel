@@ -43,22 +43,8 @@
       <div class="actions mb-4">
         <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="/studentCngPass">
           <i class="material-icons">lock</i> Change Password</a>
-        <!--  <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
-          <i class="material-icons">book</i> Documentation</a -->
       </div>
-    <!--   <div class="social-wrapper">
-      <div class="social-actions">
-        <h5 class="my-2">Help us Grow</h5>
-        <div class="inner-wrapper">
-          <a class="github-button" href="https://github.com/DesignRevision/shards-dashboard" data-icon="octicon-star" data-show-count="true" aria-label="Star DesignRevision/shards-dashboard on GitHub">Star</a>
-          <iframe style="width: 91px; height: 21px;"src="https://yvoschaap.com/producthunt/counter.html#href=https%3A%2F%2Fwww.producthunt.com%2Fr%2Fp%2F112998&layout=wide" width="56" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-        </div
-      </div -->
-        <!--  <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></di -->
-        <!--  <div class="loading-overlay">
-          <div class="spinner"></div>
-        </div -->
-      </div>
+    </div>
        
     </div>
     <div class="color-switcher-toggle animated pulse infinite">
@@ -93,29 +79,23 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/studentHome">
+                <a class="nav-link active" href="{{route('studentHome')}}">
                   <i class="material-icons">home</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentResearch">
+                <a class="nav-link " href="{{route('studentResearch')}}">
                   <i class="material-icons">vertical_split</i>
                   <span>My Research</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentTopics">
+                <a class="nav-link " href="{{route('studentTopicsWindow')}}">
                   <i class="material-icons">book</i>
                   <span>Available Topics</span>
                 </a>
               </li>
-              <!--   <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Supervisors</span>
-                </a>
-              </l -->
               <li class="nav-item">
                 <a class="nav-link " href="/studentUpload">
                   <i class="material-icons">note</i>
@@ -128,12 +108,6 @@
                   <span>Download Materials</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
             </ul>
           </div>
         </aside>
@@ -142,14 +116,16 @@
           <div class="main-navbar sticky-top bg-white">
             <!-- Main Navbar -->
             <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-              <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+             <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
                 <div class="input-group input-group-seamless ml-3">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       
                     </div>
                   </div>
-                  <input class="navbar-search form-control" type="text"  aria-label="Search"> </div>
+                  <div class="navbar-search" style="background-color: white"> </div>
+
+                  </div>
               </form>
               <ul class="navbar-nav border-left flex-row ">
                 <!--  <li class="nav-item border-right dropdown notifications">
@@ -189,11 +165,11 @@
                 </li -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block"><%=name%></span>
+                    <img class="user-avatar rounded-circle mr-2" src="/images/avatars/0.jpg" alt="User Avatar">
+                    <span class="d-none d-md-inline-block">xx-xxxxx-x<!-- <%=name%> --></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="/studentHome">
+                    <a class="dropdown-item" href="{{route('studentHome')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="/logout">
@@ -216,9 +192,9 @@
             </div>
         
           <!-- / .main-navbar -->
-          <%if(thesisResult==null){%>
-          <center>
-               <div >
+          <!-- <%if(thesisResult==null){%> -->
+          <!-- <center>
+                <div >
                   <div>
                     <div class="card card-small mb-4 pt-3">
                       <div class="card-header border-bottom text-center">
@@ -230,51 +206,46 @@
                      
                     </div>
                   </div>
-                  
                 </div>
-            </main>
-          </div>
-        </div>
-         </center>
-         <%}else{%>
+          </center> -->
+         <!-- <%}else{%> -->
           <center>
-           <div >
-              <div>
-                <div class="card card-small mb-4 pt-3">
+           <div class="container">
+              <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="card card-small mb-4 pt-3">
                   <div class="card-header border-bottom">
                    
                     <h4 class="mb-0">&ensp;</h4>
                     <h6 class="mb-0"></h6>
                     <div style="width: 100%;margin-left: 100px; margin-left: -10px;" class="rw">
-                      <table border="0px" width="100%">
-                        <tr>
-                          <td colspan="3" height="30px"></td>
-                        </tr>
+                      <table class="table table-sm table-borderless table-hover" width="100%">
+                        
                           <td width="100px"></td>
                           <td width="200px">Group ID</td>
                           <td>:</td>
-                          <td><%=thesisResult.group_id%></td>
+                          <td>Demo<!-- <%=thesisResult.group_id%> --></td>
                           <td width="20px"></td>
                         </tr>
                        <tr>
                          <td width="100px"></td>
                          <td width="200px" style="vertical-align: top">Topic Name</td>
                          <td style="vertical-align: top">:</td>
-                         <td><%=subDomResults.subDom_name%></td>
+                         <td>Demo<!-- <%=subDomResults.subDom_name%> --></td>
                          <td width="20px"></td>
                        </tr>
                        <tr>
                          <td width="100px"></td>
                          <td width="200px" style="vertical-align: top">Topic Description</td>
                          <td style="vertical-align: top">:</td>
-                         <td><%=subDomResults.subDom_desc%></td>
+                         <td>Demo<!-- <%=subDomResults.subDom_desc%> --></td>
                          <td width="20px"></td>
                        </tr>
                        <tr>
                          <td width="100px"></td>
                          <td width="200px">Domain</td>
                          <td>:</td>
-                         <td><%=domainResult[0].dom_name%></td>
+                         <td>Demo<!-- <%=domainResult[0].dom_name%> --></td>
                          <td width="20px"></td>
                        </tr>
                        
@@ -282,40 +253,44 @@
                          <td width="100px"></td>
                          <td width="200px">Supervisor</td>
                          <td>:</td>
-                         <td><%=facultyResult[0].faculty_fname%>&nbsp;<%=facultyResult[0].faculty_fname%></td>
+                         <td>Demo<!-- <%=facultyResult[0].faculty_fname%> -->&nbsp;Demo<!-- <%=facultyResult[0].faculty_fname%> --></td>
                          <td width="20px"></td>
                        </tr>
-                       <%if(thesisResult.external==null){%>
+                      <!--  <%if(thesisResult.external==null){%> -->
+                      <!--   <tr>
+                        <td width="100px"></td>
+                        <td width="200px">Supervisor</td>
+                        <td>:</td>
+                        <td>Not Appointed Yet</td>
+                        <td width="20px"></td>
+                      </tr> -->
+                      <!-- <%}else{%> -->
                         <tr>
                           <td width="100px"></td>
-                          <td width="200px">Supervisor</td>
+                          <td width="200px">External</td>
                           <td>:</td>
-                          <td>Not Appointed Yet</td>
+                          <td>Demo<!-- <%=thesisResult.external%> --></td>
                           <td width="20px"></td>
                         </tr>
-                      <%}else{%>
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px">Supervisor</td>
-                          <td>:</td>
-                          <td><%=thesisResult.external%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        <%}%>
+                        <!-- <%}%> -->
                        
                         <tr>
                          <td width="100px"></td>
                          <td width="200px">Type</td>
                          <td>:</td>
-                         <td><%=typeResult[0].type_name%></td>
+                         <td>Demo<!-- <%=typeResult[0].type_name%> --></td>
                          <td width="20px"></td>
                        </tr>
-
+          
                        <tr>
                         <td width="100px"></td>
                         <td width="200px">Progress</td>
                         <td>:</td>
-                        <td><progress id="file" value="<%=thesisResult.thesis_progress%>" max="100" style='margin-top: 10px;'></progress><div style="margin-top: 5px;float: right;margin-right: 510px;">(<%=thesisResult.thesis_progress%>%)</div></td>
+                        <td>
+                          <div class="progress" style="height: 20px; margin-top: 1px">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; height: 100%">75%</div>
+                          </div>
+                        </td>
                         <td width="20px"></td>
                       </tr>
                         
@@ -328,93 +303,21 @@
                         </tr>
                         <tr>
                           <td width="100px"></td>
-                          <td width="230px"><button class="btn btn-info" value="<%=name%>" onclick="groupDetails(this.value)">Group Details</button>&emsp;<button class="btn btn-danger goHome">Go Home</button></td>
+                          <td width="230px"><button class="btn btn-sm btn-info" value="Demo" onclick="groupDetails(this.value)">Group Details</button>&emsp;<button class="btn btn-sm btn-danger goHome">Go Home</button></td>
                           <td></td>
                           <td></td>
                           <td width="20px"></td>
                         </tr>
-                         <tr>
-                          <td colspan="3" height="67px"></td>
-                        </tr>
+                    
                       </table>
                     </div>
                   </div>
-                 
+                 </div>
+                </div>
                 </div>
               </div>
-              
-            </div>
-                 </main>
-               </div>
-             </div>
-         </center>
-         <%}%>
-         <!--  <center>
-           <div >
-              <div>
-                <div class="card card-small mb-4 pt-3">
-                  <div class="card-header border-bottom text-center">
-                   
-                    <h4 class="mb-0">&ensp;</h4>
-                    <h6 class="mb-0"></h6>
-                    <div style="width: 100%" class="rw">
-                      <table border="0px" width="100%">
-                        <tr>
-                          <td colspan="3" height="30px"></td>
-                        </tr>
-                        <tr>
-                          <td width="200px">Student ID</td>
-                          <td width="5px">:</td>
-                          <td width="200px">ABCD</td>
-                        </tr>
-                        <tr>
-                          <td>Department</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                        <tr>
-                          <td>CGPA</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                        <tr>
-                          <td>Credit</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                        
-                        <tr>
-                          <td>Contact</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                        
-                        <tr>
-                          <td>Registration Date</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                        
-                        <tr>
-                          <td>Registration Date</td>
-                          <td>:</td>
-                          <td>ABCD</td>
-                        </tr>
-                         <tr>
-                          <td colspan="3" height="67px"></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                 
-                </div>
-              </div>
-              
-            </div>
-                 </main>
-               </div>
-             </div>
-         </center -->
+        </center>
+         <!-- <%}%> -->
     <div class="promo-popup animated">
       <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
         <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>

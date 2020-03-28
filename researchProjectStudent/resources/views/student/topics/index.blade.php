@@ -91,29 +91,23 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/studentHome">
+                <a class="nav-link active" href="{{route('studentHome')}}">
                   <i class="material-icons">home</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentResearch">
+                <a class="nav-link " href="{{route('studentResearch')}}">
                   <i class="material-icons">vertical_split</i>
                   <span>My Research</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentTopics">
+                <a class="nav-link " href="{{route('studentTopicsWindow')}}">
                   <i class="material-icons">book</i>
                   <span>Available Topics</span>
                 </a>
               </li>
-              <!--   <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Supervisors</span>
-                </a>
-              </l -->
               <li class="nav-item">
                 <a class="nav-link " href="/studentUpload">
                   <i class="material-icons">note</i>
@@ -126,12 +120,6 @@
                   <span>Download Materials</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
             </ul>
           </div>
         </aside>
@@ -144,10 +132,12 @@
                 <div class="input-group input-group-seamless ml-3">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
-                     
+                      
                     </div>
                   </div>
-                  <input class="navbar-search form-control" type="text"  aria-label="Search"> </div>
+                  <div class="navbar-search" style="background-color: white"> </div>
+
+                  </div>
               </form>
               <ul class="navbar-nav border-left flex-row ">
                <!--   <li class="nav-item border-right dropdown notifications">
@@ -188,10 +178,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="user-avatar rounded-circle mr-2" src="/images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block"><%=name%></span>
+                    <span class="d-none d-md-inline-block">xx-xxxxx-x<!-- ><%=name% --></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="/studentHome">
+                    <a class="dropdown-item" href="{{route('studentHome')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="/logout">
@@ -215,19 +205,19 @@
             </div>
             <!-- End Page Header -->
             <!-- Default Light Table -->
-            <div class="row">
-              <div class="col">
+            <div class="container">
+            <div class="row justify-content-lg-center justify-content-sm-center justify-content-md-center">
+              <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="card card-small mb-4">
                   <!-- <div class="card-header border-bottom">
                     <h6 class="m-0">Active Users</h6>
                   </div> -->
                   <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
+                    <table class="table mb-0 table-sm table-hover">
                       <thead class="bg-light">
                         <tr>
                           <th scope="col" class="border-0">#</th>
                           <th scope="col" class="border-0">Name</th>
-                          <th scope="col" class="border-0">Description</th>
                           <th scope="col" class="border-0">Domain</th>
                           <th scope="col" class="border-0">Supervisor</th>
                           <th scope="col" class="border-0">Type</th>
@@ -235,45 +225,37 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <%if(user==null){%>
-                          <tr>
-                            <td  width="5px"></td>
-                            <td width="300px"></td>
-                            <td width="500px"></td>
-                            <td width="5px"></td>
-                            <td width="5px"></td>
-                            <td  width="5px"></td>
-                            <td width="250px">
-                             
-                            </td>
-                         </tr>
-                          <%}else{%>
-                            <% for(var i=0; i < user.length; i++){ %> 
+                        <!--  <%if(user==null){% -->
+                         <!--   <tr>
+                           <td  width="5px"></td>
+                           <td width="300px"></td>
+                           <td width="5px"></td>
+                           <td width="5px"></td>
+                           <td  width="5px"></td>
+                           <td width="250px">
+                            
+                           </td>
+                                                  </tr -->
+                          <!--  <%}else{%>
+                             <% for(var i=0; i < user.length; i++){ % --> 
                               <tr>
-                                <td  width="5px"><%=user[i].subDom_id%></td>
-                                <td width="300px"><%=user[i].subDom_name%></td>
-                                <td width="500px"><%=user[i].subDom_desc%></td>
-                                <td width="5px"><%=dom[0].dom_name%></td>
-                                <td width="5px"><%=fac[0].faculty_fname%>&nbsp;<%=fac[0].faculty_lname%></td>
-                                <td  width="5px"><%=type[0].type_name%></td>
-                                <%if(check!=null){%>
-                                <td width="250px">
-                                  <button class="btn btn-info" value="<%=user[i].subDom_id%>" onclick="goTo(this.value)" ><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Details</button> 
-                                </td>
-                                <%}else if(check==null){%>
-                                <td width="250px">
-                                  <button class="btn btn-info" value="<%=user[i].subDom_id%>" onclick="goTo(this.value)" ><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Details</button> | 
-                                  <button class="btn btn-success" value="<%=user[i].subDom_id%>" onclick="apply(this.value)"><i class="fas fa-hand-pointer" style="margin-right: 5px;margin-left: -5px"></i>Apply</button> 
-                                </td>
-                                <%}%>
+                                <td>1<!-- ><%=user[i].subDom_id% --></td>
+                                <td>Traffic Monitoring and Life Safety Ensuring system based on IoT and Agent Technology Technology Technology Technology Technology Technology<!-- ><%=user[i].subDom_name% --></td>
+                                <td>Network<!-- ><%=dom[0].dom_name% --></td>
+                                <td>Mohaimen Bin<!-- ><%=fac[0].faculty_fname% -->&nbsp;Noor<!-- ;<%=fac[0].faculty_lname% --></td>
+                                <td>Thesis<!-- ><%=type[0].type_name% --></td>
+                               <td>
+                                 <button class="btn btn-outline-info btn-sm" value="<%=user[i].subDom_id%>" onclick="goTo(this.value)" ><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Details</button> 
+                               </td>
                             </tr>
-                          <%}%>
-                        <%}%>
+                          <!--  <%}% -->
+                        <!--  <%}% -->
                    </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+            </div>
             </div>
        
         </main>
