@@ -24,3 +24,5 @@ Route::get('/student/home', 'studentHome@index')->name('studentHome');
 Route::get('/student/research', 'studentResearch@index')->name('studentResearch');
 
 Route::get('/student/availableTopics', 'studentTopicsWindow@index')->name('studentTopicsWindow');
+
+Route::get('/student/topic/details/{id}', 'studentTopicsWindow@topicDetails')->name('topicDetails');

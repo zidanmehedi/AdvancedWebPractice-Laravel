@@ -91,29 +91,23 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="/studentHome">
+                <a class="nav-link active" href="{{route('studentHome')}}">
                   <i class="material-icons">home</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentResearch">
+                <a class="nav-link " href="{{route('studentResearch')}}">
                   <i class="material-icons">vertical_split</i>
                   <span>My Research</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentTopics">
+                <a class="nav-link " href="{{route('studentTopicsWindow')}}">
                   <i class="material-icons">book</i>
                   <span>Available Topics</span>
                 </a>
               </li>
-              <!--   <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">view_module</i>
-                  <span>Supervisors</span>
-                </a>
-              </l -->
               <li class="nav-item">
                 <a class="nav-link " href="/studentUpload">
                   <i class="material-icons">note</i>
@@ -126,12 +120,6 @@
                   <span>Download Materials</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
             </ul>
           </div>
         </aside>
@@ -188,10 +176,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="user-avatar rounded-circle mr-2" src="/images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block"><%=name%></span>
+                    <span class="d-none d-md-inline-block">xx-xxxxx-x<!-- ><%=name% --></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="/studentHome">
+                    <a class="dropdown-item" href="{{route('studentHome')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="/logout">
@@ -215,104 +203,92 @@
             </div>
             <!-- End Page Header -->
             <!-- Default Light Table -->
-           <center>
-           <div >
-              <div>
-                <div class="card card-small mb-4 pt-3">
-                  <div class="card-header border-bottom">
-                   
-                    <h4 class="mb-0">&ensp;</h4>
-                    <h6 class="mb-0"></h6>
-                    <div style="width: 100%;margin-left: 100px; margin-left: -10px;" class="rw">
-                      <table border="0px" width="100%">
-                        <tr>
-                          <td colspan="3" height="30px"></td>
-                        </tr>
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px">Id</td>
-                          <td>:</td>
-                          <td><%=user.subDom_id%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px" style="vertical-align: top">Name</td>
-                          <td style="vertical-align: top">:</td>
-                          <td><%=user.subDom_name%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px" style="vertical-align: top">Description</td>
-                          <td style="vertical-align: top">:</td>
-                          <td><%=user.subDom_desc%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px">Domain</td>
-                          <td>:</td>
-                          <td><%=dom[0].dom_name%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        
-                        <tr>
-                          <td width="100px"></td>
-                          <td width="200px">Supervisor</td>
-                          <td>:</td>
-                          <td><%=fac[0].faculty_fname%>&nbsp;<%=fac[0].faculty_lname%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        
-                         <tr>
-                          <td width="100px"></td>
-                          <td width="200px">Type</td>
-                          <td>:</td>
-                          <td><%=type[0].type_name%></td>
-                          <td width="20px"></td>
-                        </tr>
-                        
-                        <tr >
-                          <td width="100px"></td>
-                          <td style="padding-bottom:50px" width="200px"></td>
-                          <td></td>
-                          <td></td>
-                          <td width="20px"></td>
-                        </tr>
-                        <%if(check!=null){%>
-                          <tr>
-                            <td width="100px"></td>
-                            <td width="200px"><button class="btn btn-danger goHome">Go Home</button></td>
-                            <td></td>
-                            <td></td>
-                            <td width="20px"></td>
-                          </tr>
-                          <%}else{%>
-                            <tr>
-                              <td width="100px"></td>
-                              <td width="200px"><button class="btn btn-info" value="<%=user.subDom_id%>" onclick="apply(this.value)">Apply</button>&emsp;<button class="btn btn-danger goHome">Go Home</button></td>
-                              <td></td>
-                              <td></td>
-                              <td width="20px"></td>
-                            </tr>
-                            <%}%>
-                         <tr>
-                          <td colspan="3" height="67px"></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                 
-                </div>
-              </div>
-              
+            <div class="container-fluid">
+	           <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+	              <div class="col-sm-12 col-lg-12 col-md-12">
+	                <div class="card card-small mb-4 pt-3">
+	                  <div class="card-header border-bottom">
+	                   
+	                    <h4 class="mb-0">&ensp;</h4>
+	                    <h6 class="mb-0"></h6>
+	                    <div style="width: 100%;margin-left: 100px; margin-left: -10px;" class="rw">
+	                      <table class="table table-sm table-hover table-borderless">
+	                        <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px">Id</td>
+	                          <td>:</td>
+	                          <td>Demo<!-- ><%=user.subDom_id% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px" style="vertical-align: top">Name</td>
+	                          <td style="vertical-align: top">:</td>
+	                          <td>Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo<!-- ><%=user.subDom_name% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px" style="vertical-align: top">Description</td>
+	                          <td style="vertical-align: top">:</td>
+	                          <td>Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo Demo<!-- ><%=user.subDom_desc% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px">Domain</td>
+	                          <td>:</td>
+	                          <td>Demo<!-- ><%=dom[0].dom_name% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        
+	                        <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px">Supervisor</td>
+	                          <td>:</td>
+	                          <td>Demo<!-- ><%=fac[0].faculty_fname% -->&nbsp;Demo<!-- ;<%=fac[0].faculty_lname% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        
+	                         <tr>
+	                          <td width="100px"></td>
+	                          <td width="200px">Type</td>
+	                          <td>:</td>
+	                          <td>Demo<!-- ><%=type[0].type_name% --></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                        
+	                        <tr >
+	                          <td width="100px"></td>
+	                          <td style="padding-bottom:50px" width="200px"></td>
+	                          <td></td>
+	                          <td></td>
+	                          <td width="20px"></td>
+	                        </tr>
+	                    <!--      <%if(check!=null){%>
+	                      <tr>
+	                        <td width="100px"></td>
+	                        <td width="200px"><button class="btn btn-danger goHome">Go Home</button></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td width="20px"></td>
+	                      </tr>
+	                      <%}else{% -->
+	                            <tr>
+	                              <td width="100px"></td>
+	                              <td width="200px"><button class="btn btn-outline-info btn-sm" value="<%=user.subDom_id%>" onclick="apply(this.value)">Apply</button>&emsp;<button class="btn btn-outline-danger btn-sm goToTopics">Back</button></td>
+	                              <td></td>
+	                              <td></td>
+	                              <td width="20px"></td>
+	                            </tr>
+	                            <!--  <%}% -->
+	                      </table>
+	                    </div>
+	                  </div>
+	                 </div>
+	                </div>
+	            </div>
             </div>
-                 </main>
-               </div>
-             </div>
-         </center>
-       
         </main>
       </div>
     </div>

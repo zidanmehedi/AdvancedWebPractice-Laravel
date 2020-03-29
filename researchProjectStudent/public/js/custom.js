@@ -4,6 +4,10 @@ $(document).ready(function(){
      	window.location='http://localhost:3000/studentHome';
     });
 
+    $('.goToTopics').on('click',function goToTopics(){
+        window.location='http://localhost:3000/student/availableTopics';
+    });
+
     $('#apply').on('click',function applyTopic(){
      	window.location='http://localhost:3000/studentTopics';
     });
@@ -16,7 +20,7 @@ $(document).ready(function(){
 });
 
 function goTo(value){
-	window.location='http://localhost:3000/studentTopics/topicDetails/'+value;
+	window.location='http://localhost:3000/student/topic/details/'+value;
 }
 
 function apply(value){

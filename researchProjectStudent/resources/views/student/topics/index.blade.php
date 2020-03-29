@@ -245,7 +245,7 @@
                                 <td>Mohaimen Bin<!-- ><%=fac[0].faculty_fname% -->&nbsp;Noor<!-- ;<%=fac[0].faculty_lname% --></td>
                                 <td>Thesis<!-- ><%=type[0].type_name% --></td>
                                <td>
-                                 <button class="btn btn-outline-info btn-sm" value="<%=user[i].subDom_id%>" onclick="goTo(this.value)" ><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Details</button> 
+                                 <button class="btn btn-outline-info btn-sm" value="<%=user[i].subDom_id%>" onclick="goTo(12)" ><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Details</button> 
                                </td>
                             </tr>
                           <!--  <%}% -->
