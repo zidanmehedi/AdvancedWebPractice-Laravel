@@ -13,7 +13,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body class="h-100">
-   <div class="color-switcher animated">
+    <div class="color-switcher animated">
      <h5>Accent Color</h5>
      <ul class="accent-colors">
        <li class="accent-primary active" data-color="primary">
@@ -38,25 +38,11 @@
      <div class="actions mb-4">
         <a class="mb-2 btn btn-sm btn-primary w-100 d-table mx-auto extra-action" href="/studentCngPass">
           <i class="material-icons">lock</i> Change Password</a>
-        <!--  <a class="mb-2 btn btn-sm btn-white w-100 d-table mx-auto extra-action" href="https://designrevision.com/docs/shards-dashboard-lite">
-          <i class="material-icons">book</i> Documentation</a -->
-      </div>
-     <!-- <div class="actions mb-4">
-         <i class="material-icons">book</i> Documentation</a>
-     </div> -->
-     <!-- <div class="social-wrapper">
-       <div id="social-share" data-url="https://designrevision.com/downloads/shards-dashboard-lite/" data-text="🔥 Check out Shards Dashboard Lite, a free and beautiful Bootstrap 4 admin dashboard template!" data-title="share"></div
-       <div class="loading-overlay">
-         <div class="spinner"></div>
-       </div
-     </div -->
+     </div>
      <div class="close">
        <i class="material-icons">close</i>
      </div>
-   </div -->
-    <!--  <div class="color-switcher-toggle animated pulse infinite">
-      <i class="material-icons">settings</i>
-    </div -->
+    </div>
     <div class="container-fluid">
       <div class="row">
         <!-- Main Sidebar -->
@@ -86,19 +72,19 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
                  <li class="nav-item">
-                <a class="nav-link active" href="/studentHome">
+                <a class="nav-link active" href="{{route('studentHome')}}">
                   <i class="material-icons">home</i>
                   <span>Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentResearch">
+                <a class="nav-link " href="{{route('studentResearch')}}">
                   <i class="material-icons">vertical_split</i>
                   <span>My Research</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentTopics">
+                <a class="nav-link " href="{{route('studentTopicsWindow')}}">
                   <i class="material-icons">book</i>
                   <span>Available Topics</span>
                 </a>
@@ -110,23 +96,17 @@
                 </a>
               </l -->
               <li class="nav-item">
-                <a class="nav-link " href="/studentUpload">
+                <a class="nav-link " href="{{route('file.upload')}}">
                   <i class="material-icons">note</i>
                   <span>Upload Documents</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="/studentDownload">
+                <a class="nav-link " href="{{route('file.download')}}">
                   <i class="material-icons">cloud_download</i>
                   <span>Download Materials</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
             </ul>
           </div>
         </aside>
@@ -183,10 +163,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="user-avatar rounded-circle mr-2" src="/images/avatars/0.jpg" alt="User Avatar">
-                    <span class="d-none d-md-inline-block"><%=name%></span>
+                    <span class="d-none d-md-inline-block">xx-xxxxx-x<!-- <%=name%> --></span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="/studentHome">
+                    <a class="dropdown-item" href="{{route('studentHome')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="/logout">
@@ -202,67 +182,55 @@
             </nav>
           </div>
           <!-- / .main-navbar -->
-           <%if(user==null){%>
-         <center>
-              <div >
-                 <div>
-                   <div class="card card-small mb-4 pt-3">
-                     <div class="card-header border-bottom text-center">
-                       
-                         <h3 class="page-title" style="margin-bottom: 50px">YOU HAVE NOTHING TO DOWNLOAD</h3>
-                       
-                          <div>
-                           <button class="btn btn-accent goHome" id="create">Go Home</button>
-                           
-                        </div>
-                      
-                     </div>
-                    
+           <!-- <%if(user==null){%> -->
+          <div class="container-fluid">
+             <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+               <div class="col-md-12 col-sm-12 col-lg-12">
+                 <div class="card card-small mb-4 mt-5 pt-3">
+                   <div class="card-header border-bottom text-center">
+                      <h3 class="page-title" style="margin-bottom: 50px">YOU HAVE NOTHING TO DOWNLOAD</h3>
+                      <div>
+                        <button class="btn btn-accent goHome" id="create">Go Home</button>  
+                      </div>
                    </div>
                  </div>
-                 
                </div>
-           </main>
-         </div>
+             </div> 
+                  <!-- <%}else{%> -->
+             <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+             <div class="col-md-12 col-sm-12 col-lg-12">
+               <div class="card card-small mb-4">
+                 <div class="card-header border-bottom">
+                   <h6 class="m-0">Active Users</h6>
                  </div>
-                  </center>
-                  <%}else{%>
-                  <div class="row">
-              <div class="col">
-                <div class="card card-small mb-4">
-                  <!-- <div class="card-header border-bottom">
-                    <h6 class="m-0">Active Users</h6>
-                  </div> -->
-                  <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
-                      <thead class="bg-light">
-                        <tr>
-                          <th scope="col" class="border-0">#</th>
-                          <th scope="col" class="border-0">File Name</th>
-                          <th scope="col" class="border-0">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                     <%for(var i = 0; i < user.length; i++){%>
-                    <tr>
-                      <td><%=user[i].file_id%></td>
-                      <td><%=user[i].fileName%></td>
-                      <td>
-                        <button class="btn btn-info" value="<%=user[i].fileName%>" onclick="download(this.value)"><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Download</button>
-                      </td>
-                   </tr>
-                   <%}%>
-                   <%}%>
-                   
-                    
-                   </tbody>
-                    </table>
-                  </div>
+                 <div class="card-body p-0 pb-3 text-center">
+                   <table class="table mb-0 table-sm table-hover table-borderless">
+                     <thead class="bg-light">
+                       <tr>
+                         <th scope="col" class="border-0">#</th>
+                         <th scope="col" class="border-0">File Name</th>
+                         <th scope="col" class="border-0">Action</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                    <!-- <%for(var i = 0; i < user.length; i++){%> -->
+                       <tr>
+                         <td>Demo<!-- <%=user[i].file_id%> --></td>
+                         <td>Demo<!-- <%=user[i].fileName%> --></td>
+                         <td>
+                           <button class="btn btn-primary btn-sm" value="<%=user[i].fileName%>" onclick="download(this.value)"><i class="fas fa-eye" style="margin-right: 5px;margin-left: -5px"></i>Download</button>
+                         </td>
+                      </tr>
+                    <!-- <%}%> -->
+                  <!-- <%}%> -->
+                     </tbody>
+                   </table>
                 </div>
-              </div>
-            </div>
-        </main>
-      </div>
+             </div>
+          </div>
+        </div>
+      </main>
+     </div>
     </div>
     <div class="promo-popup animated">
       <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
