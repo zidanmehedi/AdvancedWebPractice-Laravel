@@ -19,6 +19,8 @@ Route::get('/login', 'login@index')->name('login');
 
 Route::get('/student/registration', 'studentReg@index')->name('studentReg');
 
+Route::get('/student/registration/credentials', 'studentReg@cred')->name('studentRegCred');
+
 Route::get('/student/home', 'studentHome@index')->name('studentHome');
 
 Route::get('/student/research', 'studentResearch@index')->name('studentResearch');

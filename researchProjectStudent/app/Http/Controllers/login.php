@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class login extends Controller
 {
     public function index(){
-    	return view('login');
+    	return view('generalLogin/content');
     }
 }
