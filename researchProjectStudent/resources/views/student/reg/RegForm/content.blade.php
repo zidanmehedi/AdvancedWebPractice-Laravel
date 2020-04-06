@@ -1,4 +1,4 @@
-@extends('General/index')
+@extends('generalLogin/index')
 
 @section('content')
 <div class="login100-form-title" style="background-image: url(/images/unnamed.jpg);">
@@ -20,6 +20,7 @@
 	                </div>
                         
 					 <!-- end -->
+					 {{ csrf_field()}}
 					<div class="form-group validate-input m-b-18" data-validate = "This Field is Required" style="width: 100%">
 						<input class="input100 form-control" type="text" name="userid" placeholder="Academic ID" >
 						<span class="focus-input100"></span>

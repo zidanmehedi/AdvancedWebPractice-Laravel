@@ -1,4 +1,4 @@
-@extends('General/index')
+@extends('generalLogin/index')
 
 @section('content')
 <div class="login100-form-title" style="background-image: url(/images/unnamed.jpg);">
@@ -8,16 +8,17 @@
 			</div>
 			
 			<form class="login100-form validate-form"  style="padding-bottom: 25px" method="POST">
-				<!-- if(.......) -->
+				@if(session()->has('msg'))
 			 	<div class="alert alert-warning" role="alert" style="width: 100%;padding-top:2px; padding-bottom:2px;"> 
                     <div class="panel-body">
                         <div class="row justify-content-sm-center justify-content-lg-center justify-content-md-center">
                             <div class=" col-sm-auto col-lg-auto col-md-auto" style="text-align: center">
-                                <strong>Invalid User Id or Password</strong>
+                                <strong>{{session('msg')}}</strong>
                             </div>
                         </div>
                      </div>
                 </div>
+                @endif
 				<!-- else if(.......) -->
 				<!-- <div class="panel panel-info" style="width: 100%"> 
 				    <div class="panel-body" >
@@ -34,7 +35,7 @@
 				 <!-- else -->
 				 <!-- <div></div> -->
 				 <!-- end -->
-
+				{{ csrf_field()}}
 				<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 					<input class="input100" type="text" name="uname" placeholder="Enter UserId">
 

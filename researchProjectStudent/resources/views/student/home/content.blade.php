@@ -83,8 +83,8 @@
                     <div class="mb-3 mx-auto">
                       <img class="rounded-circle" src="/images/avatars/0.jpg" alt="User Avatar" width="110">
                     </div>
-                    <h4 class="mb-0"><!-- ><%= user.student_fname% -->Demo&ensp;Demo<!-- ;<%= user.student_lname% --></h4>
-                    <h6 class="mb-0">demo@demo.com<!-- ><%=user.student_email% --></h6>
+                    <h4 class="mb-0">{{$student_fname}}&ensp;{{$student_lname}}</h4>
+                    <h6 class="mb-0">{{$student_email}}</h6>
                     <div style="width: 100%" class="rw">
                       <table border="0px" width="100%">
                         <tr>
@@ -93,34 +93,34 @@
                         <tr>
                           <td>Student ID</td>
                           <td>:</td>
-                          <td><!-- ><%= user.student_id% -->Demo</td>
+                          <td>{{session('username')}}</td>
                         </tr>
                         <tr>
                           <td>Department</td>
                           <td>:</td>
-                          <td>Demo<!-- ><%= user.student_dept% --></td>
+                          <td>{{$student_dept}}</td>
                         </tr>
                         <tr>
                           <td>CGPA</td>
                           <td>:</td>
-                          <td>Demo<!-- ><%= user.student_cgpa% --></td>
+                          <td>{{$student_cgpa}}</td>
                         </tr>
                         <tr>
                           <td>Credit</td>
                           <td>:</td>
-                          <td>Demo<!-- ><%= user.student_credit% --></td>
+                          <td>{{$student_credit}}</td>
                         </tr>
                         
                         <tr>
                           <td>Contact</td>
                           <td>:</td>
-                          <td>Demo<!-- ><%= user.student_contact% --></td>
+                          <td>{{$student_contact}}</td>
                         </tr>
                         <!--  <%if(check==true){ -->
                         <tr>
                           <td>Registration Date</td>
                           <td>:</td>
-                          <td>Demo<!-- ><%=user.student_regDate% --></td>
+                          <td>{{$student_regDate}}</td>
                         </tr>
                         <!--  <%}else{% -->
                        <!--   <tr>
@@ -157,40 +157,40 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feFirstName">First Name</label>
-                                <input type="text" class="form-control" id="feFirstName" name="student_fname" placeholder="First Name" value="Demo"> </div>
+                                <input type="text" class="form-control" id="feFirstName" name="student_fname" placeholder="First Name" value="{{$student_fname}}"> </div>
                               <div class="form-group col-md-6">
                                 <label for="feLastName">Last Name</label>
-                                <input type="text" class="form-control" id="feLastName" name="student_lname" placeholder="Last Name" value="Demo"> </div>
+                                <input type="text" class="form-control" id="feLastName" name="student_lname" placeholder="Last Name" value="{{$student_lname}}"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">ID</label>
-                                <input type="text" class="form-control" id="feId" name="student_id" placeholder="xx-xxxxx-x" value="Demo" readonly> </div>
+                                <input type="text" class="form-control" id="feId" name="student_id" placeholder="xx-xxxxx-x" value="{{session('username')}}" readonly> </div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Department</label>
-                                <input type="text" class="form-control" id="feDept" name="student_dept" placeholder="CSE" value="Demo"> </div>
+                                <input type="text" class="form-control" id="feDept" name="student_dept" placeholder="CSE" value="{{$student_dept}}"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">CGPA</label>
-                                <input type="text" class="form-control" id="feCGPA" name="student_cgpa" placeholder="CGPA" value="Demo" ></div>
+                                <input type="text" class="form-control" id="feCGPA" name="student_cgpa" placeholder="CGPA" value="{{$student_cgpa}}" ></div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Credit</label>
-                                <input type="text" class="form-control" id="feCredit" name="student_credit" placeholder="Credit" value="Demo"> </div>
+                                <input type="text" class="form-control" id="feCredit" name="student_credit" placeholder="Credit" value="{{$student_credit}}"> </div>
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="feEmailAddress">Email</label>
-                                <input type="email" class="form-control" id="feEmailAddress" name="student_email" placeholder="Email" value="Demo" readonly> </div>
+                                <input type="email" class="form-control" id="feEmailAddress" name="student_email" placeholder="Email" value="{{$student_email}}" readonly> </div>
                               <div class="form-group col-md-6">
                                 <label for="fePassword">Contact Number</label>
-                                <input type="text" class="form-control" id="feCon" name="student_contact" value="Demo"> </div>
+                                <input type="text" class="form-control" id="feCon" name="student_contact" value="{{$student_contact}}"> </div>
                             </div>
                             <!--  <%if(check==true){% -->
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label >Registration Date</label>
-                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="Demo" readonly> </div>
+                                <input type="text" class="form-control" id="feDate" name="student_regDate" placeholder="" value="{{$student_regDate}}" readonly> </div>
                             </div>
                             <!--  <%}else{% -->
                              <!--  <div class="form-row">

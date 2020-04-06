@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'login@index')->name('login');
+Route::post('/login', 'login@verify');
 
 Route::get('/student/registration', 'studentReg@index')->name('studentReg');
 
