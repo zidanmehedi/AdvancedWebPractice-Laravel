@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\user;
 use Illuminate\Support\Facades\DB;
+use Validator;
+use App\Http\Requests\UserRequest;
 
 class login extends Controller
 {
@@ -21,7 +23,7 @@ class login extends Controller
     	if($user!=null){
     		$req->session()->put('username', $req->uname);
     		$req->session()->put('password', $req->password);
-    		return redirect()->route('studentHome');
+    		return redirect()->route('student.index');
     	}else{
     		$req->session()->flash('msg', 'Invalid Username or Password');
     		return redirect('/login');
