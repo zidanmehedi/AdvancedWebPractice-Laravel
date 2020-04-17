@@ -2,14 +2,23 @@
 
  @section('home')
  <!--  <%if(!error.student_fname && !error.student_lname && !error.student_dept && !error.student_cgpa && !error.student_credit){% -->
- @if(count($errors)>0)
- @if($errors->has('student_fname'))
- <div class="alert alert-danger alert-dismissible fade show mb-0 btn-accent" role="alert">
+ @if(session('welcome')!=null)
+ <div class="alert alert-success alert-dismissible fade show mb-0 btn-accent" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
      <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_fname')}}!</strong>
+     <strong>{{session('welcome')}} {{$student_lname}}!</strong>
+ </div>
+ @endif
+ @if(count($errors)>0)
+ @if($errors->has('student_fname'))
+ <div class="alert alert-danger alert-dismissible fade show mb-0 btn-danger" role="alert">
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">×</span>
+     </button>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_fname')}}</strong>
  </div>
  @endif
  @if($errors->has('student_lname'))
@@ -17,69 +26,44 @@
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
-     <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_lname')}}!</strong>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_lname')}}</strong>
  </div>
  @endif
- @if($errors->has('student_dept'))<!DOCTYPE html>
-<html lang="">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-
-<body>
-    
-</body>
-</html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href=""><style></style><script src=""></script><script></script><!DOCTYPE html>
-<html lang="">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <script src=""></script>
-</body>
-</html>
-<img alt="" width="0" height="0" src="">
- <div class="alert alert-danger alert-dismissible fade show mb-0 btn-accent" role="alert">
+ @if($errors->has('student_dept'))
+ <div class="alert alert-danger alert-dismissible fade show mb-0 btn-danger" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
-     <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_dept')}}!</strong>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_dept')}}</strong>
  </div>
  @endif
  @if($errors->has('student_cgpa'))
- <div class="alert alert-danger alert-dismissible fade show mb-0 btn-accent" role="alert">
+ <div class="alert alert-danger alert-dismissible fade show mb-0 btn-danger" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
-     <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_cgpa')}}!</strong>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_cgpa')}}</strong>
  </div>
  @endif
  @if($errors->has('student_credit'))
- <div class="alert alert-danger alert-dismissible fade show mb-0 btn-accent" role="alert">
+ <div class="alert alert-danger alert-dismissible fade show mb-0 btn-danger" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
-     <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_credit')}}!</strong>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_credit')}}</strong>
  </div>
  @endif
  @if($errors->has('student_contact'))
- <div class="alert alert-danger alert-dismissible fade show mb-0 btn-accent" role="alert">
+ <div class="alert alert-danger alert-dismissible fade show mb-0 btn-danger" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
      </button>
-     <i class="fa fa-check mx-2"></i>
-     <strong>{{$errors->first('student_contact')}}!</strong>
+     <i class="fas fa-exclamation mx-2"></i>
+     <strong>{{$errors->first('student_contact')}}</strong>
  </div>
  @endif
  @endif
@@ -238,9 +222,8 @@
                      <li class="list-group-item p-3">
                          <div class="row">
                              <div class="col">
-                                 <form method="post" action="{{url('student/'.session('sid'))}}">
+                                 <form method="post" action="">
                                      @csrf
-                                     @method('PATCH')
                                      <div class="form-row">
                                          <div class="form-group col-md-6">
                                              <label for="feFirstName">First Name</label>
@@ -295,4 +278,5 @@
              </div>
          </div>
      </div>
-     @endsection
+ </div>
+ @endsection
