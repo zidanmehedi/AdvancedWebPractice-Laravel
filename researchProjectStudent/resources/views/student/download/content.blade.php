@@ -42,7 +42,9 @@
                              <tr>
                                  <td style="text-align: left; padding-left: 3%">{{__($file->fileName)}}</td>
                                  <td>
-                                     <button class="btn btn-outline-info btn-sm" style="padding: 0 7px " value="" onclick="download(this.value)"><i class="fas fa-download"></i></button>
+                                     <button class="btn btn-outline-info btn-sm" style="padding: 0 7px"><a href="{{route('file.downloadFile',$file->file_id)}}">
+                                         <i class="fas fa-download"></i>
+                                     </a></button>
                                  </td>
                              </tr>
                              @endforeach
