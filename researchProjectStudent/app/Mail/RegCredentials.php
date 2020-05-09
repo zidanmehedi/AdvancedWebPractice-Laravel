@@ -62,7 +62,7 @@ class RegCredentials extends Mailable
             $ver->ver_fileName = $req->file('myFile')->getClientOriginalName();
             $ver->sid = $sid->sid;
             $ver->save();
-            $req->file('myFile')->move('upload',$req->file('myFile')->getClientOriginalName());
+            $req->file('myFile')->move('upload/verification',$req->file('myFile')->getClientOriginalName());
             $req->session()->flash('success', 'Registration Successful! Please Check your email for Credentials');
             return $this->markdown('RegCredentials',['userid'=>$req->userid, 'password'=>$password])
                         ->from('abc@something.com')
